@@ -1,13 +1,24 @@
-import './App.css'
+import { useState } from 'react'
+import  styles from './app.module.css'
+
 
 function App() {
-  
+  const [isDarkMode , setIsDarkMode] = useState(false)
+
+  const changeMode = () => {
+    setIsDarkMode(!isDarkMode)
+  }
+
+
   return (
-    <div>
-      <h1>HOlaaa</h1>
-      <h1>HOlaaa</h1>
-      <h1>HOlaaa</h1>
-      <h1>HOlaaa</h1>
+
+    <div className= {isDarkMode ? styles.contentLigth : styles.contentDak}>
+      <section className={styles.section}>
+      <p>EmerM</p>
+      <button onClick={()=>changeMode()}>{isDarkMode ?'🌙': '☀️'}</button>
+      </section>
+      
+
     </div>
   )
 }
