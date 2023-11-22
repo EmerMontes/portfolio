@@ -14,25 +14,53 @@ function App() {
 
     <div className= {isDarkMode ? styles.contentLigth : styles.contentDak}>
       <section className={styles.section}>
-       <p> 
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-code-square" viewBox="0 0 16 16">
-         <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-         <path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z"/>
-        </svg> 
-        EmerM</p>
+        <div >
+          <img src='/head1.png' alt="icono" /> 
+         <p>EmerM</p> 
+        </div>
+        
        <label className={styles.switch}>
          <input onChange={changeMode} type="checkbox"/>
          <span className={styles.slider}></span>
        </label>
       </section>
-      <section className={styles.about}>
-          <h2>Full Stack <br/>Developer</h2>
-          <h3>About</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit unde magnam aspernatur a sequi, blanditiis itaque officiis quo quaerat earum quasi quos tempore commodi. Sit consequuntur doloremque rem fugit a.</p>
-          <a href="../public/Cv Emerson-w.pdf" download='Cv-EmersonMontes'>
-            <button>Donwload Cv</button>
-          </a>
+
+      <section className={styles.head}>
+          <h1><span> Full Stack <br/>Developer</span></h1>
+          <p>Hola <img style={{width: "45px"}} src='/manito.gif'/> un gusto tenerte por aca, 
+           si que soy una excelente opcion para tu equipo. No dudes en dejarme
+           tu feedback, es de mucha ayuda para mi.</p>
+
+           <button className={styles.btn}>
+              <span className={styles.text}>Contactame!</span>
+          </button>
       </section>
+        
+      <section  className={styles.about}>
+          <img src="/tl3.png" alt="" /> 
+        <div>
+          <h2>About me: </h2>
+          <p>¡Hola! Soy Emerson Montes, desarrollador Full Stack, en
+          constante crecimiento, con
+          habilidades sólidas en el desarrollo
+          web.<br/>
+          <br/>
+          Mi enfoque se centra en el desarrollo tanto del frontend como del backend, utilizando tecnologías modernas como React.js y Node.js. Mi objetivo es construir soluciones tecnológicas robustas y eficientes que impulsen la experiencia del usuario y satisfagan las necesidades del cliente.
+          </p>
+         <a href="../public/Cv Emerson-w.pdf" download='Cv-EmersonMontes'>
+         <button className={styles.btn}>
+              <span className={styles.text}> <img src="/download.png" style={{width: "10px"}} /> Download Cv</span>
+          </button>
+         </a>
+        </div>
+      </section>
+
+      <section className={styles.skill}>
+        <h2> Skill: </h2>
+
+
+      </section>
+
     </div>
   )
 }
