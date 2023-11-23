@@ -27,19 +27,28 @@ function App() {
 
       <section className={styles.head}>
           <h1><span> Full Stack <br/>Developer</span></h1>
-          <p>Hola <img style={{width: "45px"}} src='/manito.gif'/> un gusto tenerte por aca, 
+          <p> Hola <img style={{width: "45px"}} src='/manito.gif'/> un gusto tenerte por aca, 
            si que soy una excelente opcion para tu equipo. No dudes en dejarme
            tu feedback, es de mucha ayuda para mi.</p>
+       <div className={styles.contac}>
 
            <button className={styles.btn}>
               <span className={styles.text}>Contactame!</span>
           </button>
+
+          <button className={styles.linkedin}>
+            <a href="https://www.linkedin.com/in/emerson-montes-422037262/" target='blank'>
+              <img style={{width: "5em"}} src='/linkedinR.png'/>
+            </a>
+          </button>
+
+       </div>
       </section>
         
       <section  className={styles.about}>
           <img src="/tl3.png" alt="" /> 
         <div>
-          <h2>About me: </h2>
+          <h3>About me: </h3>
           <p>¡Hola! Soy Emerson Montes, desarrollador Full Stack, en
           constante crecimiento, con
           habilidades sólidas en el desarrollo
@@ -49,7 +58,9 @@ function App() {
           </p>
          <a href="../public/Cv Emerson-w.pdf" download='Cv-EmersonMontes'>
          <button className={styles.btn}>
-              <span className={styles.text}> <img src="/download.png" style={{width: "10px"}} /> Download Cv</span>
+                 <img src="/download.png" style={{width: "1.5em"}} />
+              <span className={styles.text}>
+                  Download Cv</span>
           </button>
          </a>
         </div>
@@ -57,8 +68,23 @@ function App() {
 
       <section className={styles.skill}>
         <h2> Skill: </h2>
+        <p>¡Cada dia es una oportunidad para seguir aprendiendo!</p>
+        <div className={styles.imgs}>
+        <img  className={styles.skills} src="/html.png" alt="" />
+        <img  className={styles.skills} src="/css.png" alt="" />
+        <img  className={styles.skills} src="/js.png" alt="" />
+        <img  className={styles.skills} src="/react.png" alt="" />
+        <img  className={styles.skills} src="/redux.png" alt="" />
+        <img  className={styles.skills} src="/_express.png" alt="" />
+        <img  className={styles.skills} src="/_next.png" alt="" />
+        <img  className={styles.skills} src="/_node-js.png" alt="" />
+        <img  className={styles.skills} src="/_postger.png" alt="" />
+        <img  className={styles.skills} src="/vite.png" alt="" />
+        </div>
+      </section>
 
-
+      <section>
+        <h2>🚀Projectos🚀</h2>
       </section>
 
     </div>

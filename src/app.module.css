@@ -17,7 +17,16 @@ body h2{
     margin: 0;
     padding: 10px;
     font-size: 52px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 } 
+body h3{
+    color: rgb(153, 153, 231);
+    margin: 0;
+    padding: 10px;
+    font-size: 43px; 
+}
 body p{
     padding: 10px;
     margin: 0;
@@ -85,13 +94,16 @@ body p{
 
 /*----btn1----*/
 .btn {
-    width: 8em;
+    width: 19em;
     height: 3em;
     border-radius: 10px;
     background: #7f00ff59;
     cursor: pointer;
     transition: all 450ms ease-in-out;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .btn:hover {
@@ -106,14 +118,14 @@ body p{
 
 .contentLigth, .contentDak {
     min-height: 100vh;
-    margin: auto; 
+    margin: auto;
 }
 .contentLigth{ 
-    background-color: rgb(39, 37, 37);
+    background-image: url('/cool-background\ \(1\).png');
     color: white;    
 }
 .contentDak{
-    background-color: rgb(255, 255, 255);
+    background-image: url('/cool-background.png') ;
     color: black;
 }
 .head{
@@ -176,8 +188,40 @@ h1 span{
     -webkit-text-fill-color: transparent;
     font-size: 70px;
 }
-.skill h2{ 
+/* .skill h2{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.skill >p{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.skills{
+    width: 120px;
+    padding: 10px;
+}
+.skills:hover {
+    transform: scale(1.1, 1.1);
+    box-shadow: 30px 15px 40px 0 #52446b;
+}
+.imgs{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 758px;
+}
+.linkedin{
+    background: transparent;
+    border: none;
+}
+.contac{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
