@@ -159,7 +159,7 @@ function App() {
           <br/>
           Eficiente, comprometido y con excelentes habilidades blandas.😎 
           </p>
-         <a href="../public/Cv-Emerson-w.pdf" download='Cv-Emerson-w.pdf'>
+         <a href="/Cv-Emerson-w.pdf" download='Cv-Emerson-w.pdf'>
          <button onClick={descarga} className={styles.btn}>
                  <img src="/download.png" style={{width: "1.5em"}} />
               <span className={styles.text}>
