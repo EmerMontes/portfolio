@@ -9,6 +9,7 @@ function App() {
   
   const form = useRef();
   const [isDarkMode , setIsDarkMode] = useState(true)
+  const [menuVisible, setMenuVisible] = useState(false);
   
   const changeMode = () => {
     setIsDarkMode(!isDarkMode)
@@ -26,7 +27,6 @@ function App() {
         toast.onmouseleave = Swal.resumeTimer;
       }
     });
-  
     Toast.fire({
       icon: icon,
       title: title
@@ -59,7 +59,6 @@ function App() {
         showToast("error",`algo salio mal: ${error}`)
     });
   };
-  const [menuVisible, setMenuVisible] = useState(false);
 
   const abrirMenu = () => {
     setMenuVisible(true);
@@ -69,10 +68,29 @@ function App() {
     setMenuVisible(false);
   }
 
+  const handleOverlayClick = () => {
+    if (menuVisible) {
+      cerrarMenu();
+    }
+  };
+
+   const [scrolled , setScrolled] = useState(false)
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+
+  if (scrollY > 0) {
+    setScrolled(true)
+  } else {
+    setScrolled(false)
+  }
+});
+
+
   return (
 
     <div className= {isDarkMode ? styles.contentLigth : styles.contentDak}>
-      <section className={styles.section}>
+      {console.log(isDarkMode)}
+      <section className={ !scrolled ? styles.section : styles.sectionScroll}>
         <div >
           <img src='/head1.png' alt="icono" /> 
          <p>EmerM</p> 
@@ -86,23 +104,28 @@ function App() {
 
        <header>
        <button onClick={abrirMenu} className={styles.abrirMenu}> <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
-<path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"></path>
-</svg></button>
-      <nav className={`${styles.nav} ${menuVisible ? styles.visible : ''}`}>
-        <button onClick={cerrarMenu} className={styles.cerrarMenu}> <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
-<path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path>
-</svg> </button>
+          <path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"></path></svg>
+       </button>
+       <nav id='nav' className={`${styles.nav} ${menuVisible ? styles.visible : ''}`}>
+          <button onClick={cerrarMenu} className={styles.cerrarMenu}> <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+           <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path></svg> 
+          </button>
             <ul className={styles.navList}>
-                <li><a href="#">Perfil</a></li>
-                <li><a href="#">Proyectos</a></li>
-                <li><a href="#">Contactame</a></li>
+              <li><Link spy={true} smooth={true} offset={-80} duration={600} onClick={cerrarMenu} to="perfil"> <p> Perfil</p></Link></li>
+              <li><Link spy={true} smooth={true} offset={-80} duration={600} onClick={cerrarMenu} to="skill"><p>Skill</p></Link></li>
+              <li><Link spy={true} smooth={true} offset={-80} duration={600} onClick={cerrarMenu} to="proyectos"><p>Proyectos</p></Link></li>
+              <li><Link spy={true} smooth={true} offset={-80} duration={600} onClick={cerrarMenu} to="contactame"><p>Contactame</p></Link></li>
             </ul>
         </nav>
     </header>
+      <div
+        className={`${styles.overlay} ${menuVisible ? styles.overlayVisible : ''}`}
+        onClick={handleOverlayClick}
+      />
         </div>
       </section>
 
-      <section className={styles.head}>
+      <section  className={styles.head}>
           <h1><span> Full Stack <br/>Developer</span></h1>
           <p> Hola <img style={{width: "45px"}} src='/manito.gif'/> un gusto tenerte por aca, 
            si que soy una excelente opcion para tu equipo. No dudes en dejarme
@@ -126,7 +149,7 @@ function App() {
 
       </section>
         
-      <section  className={styles.about}>
+      <section id='perfil'  className={styles.about}>
           <img src="/tl3.png" alt="" /> 
         <div>
           <h3>Perfil: </h3>
@@ -145,7 +168,7 @@ function App() {
         </div>
       </section>
 
-      <section className={styles.skill}>
+      <section  id='skill' className={styles.skill}>
         <h2> Skill: </h2>
         <p>¡Cada dia es una oportunidad para seguir aprendiendo!</p>
         <div className={styles.imgs}>
@@ -162,7 +185,7 @@ function App() {
         </div>
       </section>
 
-      <section>
+      <section id='proyectos'>
         <h2>🚀Projectos🚀</h2>
         <p>... y seguimos aprendiendo.</p>
         <div className={styles.proyects}>

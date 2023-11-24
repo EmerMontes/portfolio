@@ -5,6 +5,19 @@
 /* html {
   scroll-behavior: smooth;
 } */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  display: none !important;
+}
+
+.overlayVisible {
+  display: block !important; /* Mostrar cuando el menú está abierto */
+}
 header {
   display: flex;
   align-items: center;
@@ -22,7 +35,6 @@ header {
 
 .navList li a {
   text-decoration: none;
-  color: #ffffff;
   font-size: 18px;
 }
 
@@ -33,6 +45,7 @@ header {
 
 a{
   text-decoration: none;
+  cursor: pointer;
 }
 body{
   min-height: 100vh;
@@ -174,6 +187,7 @@ body p{
     align-items: center;
     justify-content: center;
     margin-bottom: 45px;
+    padding-top: 80px;
 }
 .head p{
   display: block;
@@ -185,6 +199,9 @@ body p{
     justify-content: space-between;
     padding: 10px;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
 }
 .section div{
     display: flex;
@@ -193,6 +210,25 @@ body p{
 }
 .section img{
     width: 3rem;
+}
+.sectionScroll{
+  background-color: rgb(0 126 255 / 14%);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  backdrop-filter: blur(30px);
+}
+.sectionScroll div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sectionScroll img{
+  width: 3rem;
 }
 .about{
     padding: 10px;
@@ -595,6 +631,7 @@ svg{
       background-color: #1c1c1c;
       padding: 2rem;
       box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+      min-height: 100vh;
   }
 
   .nav.visible {
@@ -617,7 +654,5 @@ svg{
     width: 2em;
     height: 2em;
   }
-  button:hover{
-    background-color: transparent !important;
-  }
+ 
 }
