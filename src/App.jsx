@@ -10,6 +10,7 @@ function App() {
   const form = useRef();
   const [isDarkMode , setIsDarkMode] = useState(true)
   const [menuVisible, setMenuVisible] = useState(false);
+  const [scrolled , setScrolled] = useState(false)
   
   const changeMode = () => {
     setIsDarkMode(!isDarkMode)
@@ -74,17 +75,14 @@ function App() {
     }
   };
 
-   const [scrolled , setScrolled] = useState(false)
-window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
-
-  if (scrollY > 0) {
-    setScrolled(true)
-  } else {
-    setScrolled(false)
-  }
-});
-
+    if (scrollY > 0) {
+      setScrolled(true)
+    } else {
+      setScrolled(false)
+    }
+  });
 
   return (
 
