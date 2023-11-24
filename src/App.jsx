@@ -208,10 +208,10 @@ function App() {
           <img  src="/countryG.gif" />
               <div className={styles.proyectsDetail}>
                   <strong> Countries </strong> 
-                  <strong> Desarrolado con React, Redux-toolkit, Node.js, Express, Postgres.</strong>
+                  <strong> Desarrollado con React, Redux-toolkit, Node.js, Express, Postgres.</strong>
                   <div>
                   <a href="https://github.com/EmerMontes/SPA-Coutries " target='blank'>
-                  <button>Ver codigo</button> 
+                  <button>Ver código</button> 
                   </a>
                   <a href="https://countryspa.vercel.app " target='blank'>
                   <button>Web site</button> 
@@ -229,7 +229,7 @@ function App() {
                   <strong> Proyecto realizado con un gran equipo para una marca de ropa.</strong>
                   <div>
                     <a href="https://github.com/SantiagoQuirogaMolina/Etnia-Nuevo-Dashb" target='blank'>
-                    <button>Ver codigo</button> 
+                    <button>Ver código</button> 
                     </a>
                     <a href="https://etnia.vercel.app " target='blank'>
                     <button>Web site</button> 
@@ -242,8 +242,8 @@ function App() {
       </section>
 
       <section id='contactame'>
-        <h2>Contactame!</h2>
-        <p>Iniciemos una conversacion</p>
+        <h2>Contáctame!</h2>
+        <p>Iniciemos una conversación</p>
         <div className={styles.formu}>
           <form ref={form} onSubmit={sendEmail} className={styles.formcontainer}>
             <div className={styles.form}>     
