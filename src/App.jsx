@@ -115,7 +115,7 @@ function App() {
               <li><Link spy={true} smooth={true} offset={-80} duration={600} onClick={cerrarMenu} to="perfil"> <p> Perfil</p></Link></li>
               <li><Link spy={true} smooth={true} offset={-80} duration={600} onClick={cerrarMenu} to="skill"><p>Skill</p></Link></li>
               <li><Link spy={true} smooth={true} offset={-80} duration={600} onClick={cerrarMenu} to="proyectos"><p>Proyectos</p></Link></li>
-              <li><Link spy={true} smooth={true} offset={-80} duration={600} onClick={cerrarMenu} to="contactame"><p>Contactame</p></Link></li>
+              <li><Link spy={true} smooth={true} offset={-80} duration={600} onClick={cerrarMenu} to="contactame"><p>Contáctame</p></Link></li>
             </ul>
         </nav>
     </header>
@@ -128,9 +128,9 @@ function App() {
 
       <section  className={styles.head}>
           <h1><span> Full Stack <br/>Developer</span></h1>
-          <p> Hola <img style={{width: "45px"}} src='/manito.gif'/> un gusto tenerte por aca, 
-           si que soy una excelente opcion para tu equipo. No dudes en dejarme
-           tu feedback, es de mucha ayuda para mi.</p>
+          <p> Hola <img style={{width: "45px"}} src='/manito.gif'/> un gusto tenerte por acá, 
+           sí que soy una excelente opción para tu equipo. No dudes en dejarme
+           tu feedback, es de mucha ayuda para mí.</p>
 
        <div className={styles.contac}>
 
@@ -138,7 +138,7 @@ function App() {
              smooth={true} 
              offset={500}  duration={600}  to="contactame">
               <button className={styles.btn}>
-               <span className={styles.text}>Contactame!</span>
+               <span className={styles.text}>Contáctame!</span>
               </button>   
             </Link>
 
@@ -163,15 +163,15 @@ function App() {
          <button onClick={descarga} className={styles.btn}>
                  <img src="/download.png" style={{width: "1.5em"}} />
               <span className={styles.text}>
-                  Download Cv</span>
+                  Descargar Cv</span>
           </button>
          </a>
         </div>
       </section>
 
       <section  id='skill' className={styles.skill}>
-        <h2> Skill: </h2>
-        <p>¡Cada dia es una oportunidad para seguir aprendiendo!</p>
+        <h2> ⚔️Skills⚔️ </h2>
+        <p>¡Cada día es una oportunidad para seguir aprendiendo!</p>
         <div className={styles.imgs}>
         <img  className={styles.skills} src="/html.png" alt="" />
         <img  className={styles.skills} src="/css.png" alt="" />
@@ -187,17 +187,17 @@ function App() {
       </section>
 
       <section id='proyectos'>
-        <h2>🚀Projectos🚀</h2>
-        <p>... y seguimos aprendiendo.</p>
+        <h2>🚀Proyectos🚀</h2>
+        <p> ...y seguimos aprendiendo.</p>
         <div className={styles.proyects}>
         <div className={styles.container}>
           <div className={styles.box}>
               <img  src="/RickG.gif" />
               <div className={styles.proyectsDetail}>
                   <strong> Rick and Morty </strong> 
-                  <strong> Desarrolado con React, Redux, Node.js, Express, Postgres.</strong>
+                  <strong> Desarrollado con React, Redux, Node.js, Express, Postgres.</strong>
                   <a href="https://github.com/EmerMontes/Integrador.git " target='blank'>
-                  <button>Ver codigo</button> 
+                  <button>Ver código</button> 
                   </a>
               </div>
           </div>
