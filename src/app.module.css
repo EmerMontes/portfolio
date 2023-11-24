@@ -2,6 +2,38 @@
 *{
     box-sizing: border-box;
 }
+/* html {
+  scroll-behavior: smooth;
+} */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;  
+  padding-left: 10px;
+  background-color: #ececec00;
+  max-height: 45px;
+}
+.navList {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navList li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.abrirMenu,
+.cerrarMenu {
+  display: none;
+}
+
+a{
+  text-decoration: none;
+}
 body{
   min-height: 100vh;
   margin: auto;
@@ -401,7 +433,7 @@ button:hover{
 /*--------------------------------*/
 .formcontainer {
   max-width: 600px;
-  margin: 30px;
+  margin: 25px;
   background-color: #001925;
   padding: 30px;
   border-left: 5px solid #a3dafb;
@@ -506,4 +538,86 @@ button:hover{
 footer > p{
   color: grey;
   font-size: 15px;
+}
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li{
+  margin: 0;
+  padding: 0;
+}
+svg{
+  width:5em;
+}
+
+@media only screen and (max-width: 600px) {
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .formu{
+    display: block;
+  }
+  .abrirMenu,
+  .cerrarMenu {
+      display: block;
+      border: 0;
+      font-size: 1.25rem;
+      background-color: transparent;
+      cursor: pointer;
+  }
+
+  .abrirMenu {
+      color: #1c1c1c;
+  }
+
+  .cerrarMenu {
+      color: #ececec;
+  }
+
+  .nav {
+      opacity: 0;
+      visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: 1rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #1c1c1c;
+      padding: 2rem;
+      box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+  }
+
+  .nav.visible {
+      opacity: 1;
+      visibility: visible;
+  }
+  
+  .navList {
+      flex-direction: column;
+      align-items: end;
+  }
+
+  .navList li a {
+      color: #ecececec;
+  }
+ .abrirMenu > svg{
+    width: 2em;
+  }
+  .cerrarMenu > svg{
+    width: 2em;
+    height: 2em;
+  }
+  button:hover{
+    background-color: transparent !important;
+  }
 }
