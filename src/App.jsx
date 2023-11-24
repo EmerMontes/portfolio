@@ -1,13 +1,86 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import  styles from './app.module.css'
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 
 function App() {
+  
+  const form = useRef();
   const [isDarkMode , setIsDarkMode] = useState(true)
-
+  
   const changeMode = () => {
     setIsDarkMode(!isDarkMode)
   }
+  
+  const sendEmail = (event) => {
+    
+    event.preventDefault();
+    const formData = new FormData(form.current);
+    const userName = formData.get('user_name');
+    const userEmail = formData.get('user_email');
+    const message = formData.get('message');
+
+    if (!userName || !userEmail || !message) {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "error",
+        title: "Hay campos vacios"
+      });
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail)) {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "warning",
+        title: "verifica el corrreo"
+      });
+      return;
+    }
+    emailjs.sendForm('service_it3dd3r', 'template_fk6r9ps', form.current, 'J1v_hoFG2HX08mGPL')
+       .then((result) => {
+        if (result) {
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "success",
+            title: "Mensaje enviado con exito"
+          });
+        }
+       }, (error) => {
+        console.log(error.text);
+    });
+
+  };
 
 
   return (
@@ -34,27 +107,21 @@ function App() {
 
            <button className={styles.btn}>
               <span className={styles.text}>Contactame!</span>
-          </button>
-
-          <button className={styles.linkedin}>
+          </button>   
             <a href="https://www.linkedin.com/in/emerson-montes-422037262/" target='blank'>
-              <img style={{width: "5em"}} src='/linkedinR.png'/>
+              <img style={{width: "4em"}} src='/linkedinR.png'/>
             </a>
-          </button>
-
        </div>
       </section>
         
       <section  className={styles.about}>
           <img src="/tl3.png" alt="" /> 
         <div>
-          <h3>About me: </h3>
-          <p>¡Hola! Soy Emerson Montes, desarrollador Full Stack, en
-          constante crecimiento, con
-          habilidades sólidas en el desarrollo
-          web.<br/>
+          <h3>Perfil: </h3>
+          <p>Soy Emerson Montes, desarrollador Full Stack, con muchas ganas de enriquecer mi carrera profesional. 
           <br/>
-          Mi enfoque se centra en el desarrollo tanto del frontend como del backend, utilizando tecnologías modernas como React.js y Node.js. Mi objetivo es construir soluciones tecnológicas robustas y eficientes que impulsen la experiencia del usuario y satisfagan las necesidades del cliente.
+          <br/>
+          Eficiente, comprometido y con excelentes habilidades blandas.😎 
           </p>
          <a href="../public/Cv Emerson-w.pdf" download='Cv-EmersonMontes'>
          <button className={styles.btn}>
@@ -85,7 +152,78 @@ function App() {
 
       <section>
         <h2>🚀Projectos🚀</h2>
+        <p>... y seguimos aprendiendo.</p>
+        <div className={styles.proyects}>
+        <div className={styles.container}>
+          <div className={styles.box}>
+              <img  src="/RickG.gif" />
+              <div className={styles.proyectsDetail}>
+                  <strong> Rick and Morty </strong> 
+                  <strong> Desarrolado con React, Redux, Node.js, Express, Postgres.</strong>
+                  <a href="https://github.com/EmerMontes/Integrador.git " target='blank'>
+                  <button>Ver codigo</button> 
+                  </a>
+              </div>
+          </div>
+        </div>
+
+        <div className={styles.container}>
+          <div className={styles.box}>
+          <img  src="/countryG.gif" />
+              <div className={styles.proyectsDetail}>
+                  <strong> Countries </strong> 
+                  <strong> Desarrolado con React, Redux-toolkit, Node.js, Express, Postgres.</strong>
+                  <div>
+                  <a href="https://github.com/EmerMontes/SPA-Coutries " target='blank'>
+                  <button>Ver codigo</button> 
+                  </a>
+                  <a href="https://countryspa.vercel.app " target='blank'>
+                  <button>Web site</button> 
+                  </a>
+                 </div>
+              </div>
+          </div>
+        </div>
+
+        <div className={styles.container}>
+          <div className={styles.box}>
+          <img  src="/etniaG.gif" />
+              <div className={styles.proyectsDetail}>
+                  <strong> Etnia Brand </strong> 
+                  <strong> Proyecto realizado con un gran equipo para una marca de ropa.</strong>
+                  <div>
+                    <a href="https://github.com/SantiagoQuirogaMolina/Etnia-Nuevo-Dashb" target='blank'>
+                    <button>Ver codigo</button> 
+                    </a>
+                    <a href="https://etnia.vercel.app " target='blank'>
+                    <button>Web site</button> 
+                    </a>
+                  </div>
+              </div>
+          </div>
+        </div>
+        </div>   
       </section>
+
+      <section>
+        <h2>Contactame!</h2>
+        <p>Iniciemos una conversacion</p>
+        <form ref={form} onSubmit={sendEmail} className={styles.formu}>
+          <div className={styles.formcontainer}>
+            <div className={styles.form}>     
+              <input placeholder="Nombre" type="text" name="user_name" className={styles.input}/>
+              <input placeholder="Email" id="mail"  name="user_email" type="email" className={styles.input}/>
+              <textarea  placeholder="Tu mensaje" rows="5" cols="10"  name="message" className={styles.textarea}/>
+              <button className={styles.sendbutton}>Enviar</button>
+            </div>
+         </div>
+        </form>   
+      </section>
+
+      <footer>
+        <p>Porftfolio web 2023 © - 
+         Emerson Montes</p>
+      </footer>
 
     </div>
   )
