@@ -2,9 +2,6 @@
 *{
     box-sizing: border-box;
 }
-/* html {
-  scroll-behavior: smooth;
-} */
 .overlay {
   position: fixed;
   top: 0;
@@ -14,9 +11,8 @@
   z-index: -1;
   display: none !important;
 }
-
 .overlayVisible {
-  display: block !important; /* Mostrar cuando el menú está abierto */
+  display: block !important;
 }
 header {
   display: flex;
@@ -32,17 +28,14 @@ header {
   display: flex;
   gap: 1rem;
 }
-
 .navList li a {
   text-decoration: none;
   font-size: 18px;
 }
-
 .abrirMenu,
 .cerrarMenu {
   display: none;
 }
-
 a{
   text-decoration: none;
   cursor: pointer;
@@ -263,11 +256,6 @@ h1 span{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-/* .skill h2{ 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 .skills{
     width: 100px;
     padding: 10px;

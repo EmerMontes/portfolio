@@ -90,10 +90,10 @@ function App() {
   return (
 
     <div className= {isDarkMode ? styles.contentLigth : styles.contentDak}>
-      {console.log(isDarkMode)}
+      
       <section className={ !scrolled ? styles.section : styles.sectionScroll}>
         <div >
-          <img src='/head1.png' alt="icono" /> 
+          <img loading="lazy" src='/head1.png' alt="icono" /> 
          <p>EmerM</p> 
         </div>
         <div>
@@ -128,7 +128,7 @@ function App() {
 
       <section  className={styles.head}>
           <h1><span> Full Stack <br/>Developer</span></h1>
-          <p> Hola <img style={{width: "45px"}} src='/manito.gif'/> un gusto tenerte por acá, 
+          <p> Hola <img loading="lazy" style={{width: "45px"}} src='/manito.gif'/> un gusto tenerte por acá, 
            sí que soy una excelente opción para tu equipo. No dudes en dejarme
            tu feedback, es de mucha ayuda para mí.</p>
 
@@ -143,7 +143,7 @@ function App() {
             </Link>
 
             <a href="https://www.linkedin.com/in/emerson-montes-422037262/" target='blank'>
-              <img style={{width: "4em"}} src='/linkedinR.png'/>
+              <img loading="lazy" style={{width: "4em"}} src='/linkedinR.png'/>
             </a>
 
        </div>
@@ -151,7 +151,7 @@ function App() {
       </section>
         
       <section id='perfil'  className={styles.about}>
-          <img src="/tl3.png" alt="" /> 
+          <img loading="lazy" src="/tl3.png" alt="" /> 
         <div>
           <h3>Perfil: </h3>
           <p>Soy Emerson Montes, desarrollador Full Stack, con muchas ganas de enriquecer mi carrera profesional. 
@@ -161,7 +161,7 @@ function App() {
           </p>
          <a href="/Cv-Emerson-w.pdf" download='Cv-Emerson-w.pdf'>
          <button onClick={descarga} className={styles.btn}>
-                 <img src="/download.png" style={{width: "1.5em"}} />
+                 <img loading="lazy" src="/download.png" style={{width: "1.5em"}} />
               <span className={styles.text}>
                   Descargar Cv</span>
           </button>
@@ -173,16 +173,16 @@ function App() {
         <h2> ⚔️Skills⚔️ </h2>
         <p>¡Cada día es una oportunidad para seguir aprendiendo!</p>
         <div className={styles.imgs}>
-        <img  className={styles.skills} src="/html.png" alt="" />
-        <img  className={styles.skills} src="/css.png" alt="" />
-        <img  className={styles.skills} src="/js.png" alt="" />
-        <img  className={styles.skills} src="/react.png" alt="" />
-        <img  className={styles.skills} src="/redux.png" alt="" />
-        <img  className={styles.skills} src="/_express.png" alt="" />
-        <img  className={styles.skills} src="/_next.png" alt="" />
-        <img  className={styles.skills} src="/_node-js.png" alt="" />
-        <img  className={styles.skills} src="/_postger.png" alt="" />
-        <img  className={styles.skills} src="/vite.png" alt="" />
+        <img loading="lazy"  className={styles.skills} src="/html.png" alt="" />
+        <img loading="lazy" className={styles.skills} src="/css.png" alt="" />
+        <img loading="lazy" className={styles.skills} src="/js.png" alt="" />
+        <img loading="lazy" className={styles.skills} src="/react.png" alt="" />
+        <img loading="lazy" className={styles.skills} src="/redux.png" alt="" />
+        <img loading="lazy" className={styles.skills} src="/_express.png" alt="" />
+        <img loading="lazy" className={styles.skills} src="/_next.png" alt="" />
+        <img loading="lazy" className={styles.skills} src="/_node-js.png" alt="" />
+        <img loading="lazy" className={styles.skills} src="/_postger.png" alt="" />
+        <img loading="lazy" className={styles.skills} src="/vite.png" alt="" />
         </div>
       </section>
 
@@ -192,7 +192,7 @@ function App() {
         <div className={styles.proyects}>
         <div className={styles.container}>
           <div className={styles.box}>
-              <img  src="/RickG.gif" />
+              <img  loading="lazy" src="/RickG.gif" />
               <div className={styles.proyectsDetail}>
                   <strong> Rick and Morty </strong> 
                   <strong> Desarrollado con React, Redux, Node.js, Express, Postgres.</strong>
@@ -205,7 +205,7 @@ function App() {
 
         <div className={styles.container}>
           <div className={styles.box}>
-          <img  src="/countryG.gif" />
+          <img loading="lazy" src="/countryG.gif" />
               <div className={styles.proyectsDetail}>
                   <strong> Countries </strong> 
                   <strong> Desarrollado con React, Redux-toolkit, Node.js, Express, Postgres.</strong>
@@ -223,7 +223,7 @@ function App() {
 
         <div className={styles.container}>
           <div className={styles.box}>
-          <img  src="/etniaG.gif" />
+          <img loading="lazy" src="/etniaG.gif" />
               <div className={styles.proyectsDetail}>
                   <strong> Etnia Brand </strong> 
                   <strong> Proyecto realizado con un gran equipo para una marca de ropa.</strong>
