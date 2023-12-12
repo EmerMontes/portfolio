@@ -84,7 +84,7 @@ function App() {
     }
   });
   const descarga = ()=>{
-    showToast("success","Cv descargado")
+    showToast("success","Cv descargado con exito")
   }
 
   return (
