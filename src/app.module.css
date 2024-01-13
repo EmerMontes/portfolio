@@ -181,6 +181,7 @@ body p{
     justify-content: center;
     margin-bottom: 45px;
     padding-top: 80px;
+    -webkit-animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both
 }
 .head p{
   display: block;
@@ -255,6 +256,11 @@ h1 span{
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+.skill > .parrafo{
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
 }
 .skills{
     width: 100px;
@@ -639,3 +645,6 @@ svg{
     height: 3em;
   }
 }
+
+
+@-webkit-keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}
