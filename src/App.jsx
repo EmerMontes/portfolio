@@ -159,7 +159,7 @@ function App() {
           <br/>
           Eficiente, comprometido y con excelentes habilidades blandas.😎 
           </p>
-         <a href="/Cv-Emerson-w.pdf" download='Cv-Emerson-w.pdf'>
+         <a href="/HV-EMERSON.pdf" download='HV-EMERSON.pdf'>
          <button onClick={descarga} className={styles.btn}>
                  <img loading="lazy" src="/download.png" style={{width: "1.5em"}} />
               <span className={styles.text}>
@@ -171,7 +171,9 @@ function App() {
 
       <section  id='skill' className={styles.skill}>
         <h2> ⚔️Skills⚔️ </h2>
+         <div className={styles.parrafo}>
         <p>¡Cada día es una oportunidad para seguir aprendiendo!</p>
+        </div>
         <div className={styles.imgs}>
         <img loading="lazy"  className={styles.skills} src="/html.png" alt="" />
         <img loading="lazy" className={styles.skills} src="/css.png" alt="" />
@@ -190,12 +192,31 @@ function App() {
         <h2>🚀Proyectos🚀</h2>
         <p> ...y seguimos aprendiendo.</p>
         <div className={styles.proyects}>
+
+        <div className={styles.container}>
+          <div className={styles.box}>
+          <img loading="lazy" src="/Green.gif" />
+              <div className={styles.proyectsDetail}>
+                  <strong> Green Wave </strong> 
+                  <strong> Desarrollado con NextJs, Node.js, Express, PostgreSQL.</strong>
+                  <div>
+                  <a href="https://github.com/SebaGatti91/PF-GreenWave-Back" target='blank'>
+                  <button>Ver código</button> 
+                  </a>
+                  <a href="https://greenwave-henry.vercel.app" target='blank'>
+                  <button>Web site</button> 
+                  </a>
+                 </div>
+              </div>
+          </div>
+        </div>
+
         <div className={styles.container}>
           <div className={styles.box}>
               <img  loading="lazy" src="/RickG.gif" />
               <div className={styles.proyectsDetail}>
                   <strong> Rick and Morty </strong> 
-                  <strong> Desarrollado con React, Redux, Node.js, Express, Postgres.</strong>
+                  <strong> Desarrollado con React, Redux, Node.js, Express, PostgreSQL.</strong>
                   <a href="https://github.com/EmerMontes/Integrador.git " target='blank'>
                   <button>Ver código</button> 
                   </a>
@@ -208,7 +229,7 @@ function App() {
           <img loading="lazy" src="/countryG.gif" />
               <div className={styles.proyectsDetail}>
                   <strong> Countries </strong> 
-                  <strong> Desarrollado con React, Redux-toolkit, Node.js, Express, Postgres.</strong>
+                  <strong> Desarrollado con React, Redux-toolkit, Node.js, Express, PostgreSQL.</strong>
                   <div>
                   <a href="https://github.com/EmerMontes/SPA-Coutries " target='blank'>
                   <button>Ver código</button> 
