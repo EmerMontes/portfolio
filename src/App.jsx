@@ -159,7 +159,7 @@ function App() {
           <br/>
           Eficiente, comprometido y con excelentes habilidades blandas.😎 
           </p>
-         <a href="/HV-EMERSON.pdf" download='HV-EMERSON.pdf'>
+         <a href="/CV.pdf" download='HV-EMERSON.pdf'>
          <button onClick={descarga} className={styles.btn}>
                  <img loading="lazy" src="/download.png" style={{width: "1.5em"}} />
               <span className={styles.text}>
@@ -185,6 +185,8 @@ function App() {
         <img loading="lazy" className={styles.skills} src="/_node-js.png" alt="" />
         <img loading="lazy" className={styles.skills} src="/_postger.png" alt="" />
         <img loading="lazy" className={styles.skills} src="/vite.png" alt="" />
+        <img loading="lazy" className={styles.skills} src="/python.png" alt="" />
+        <img loading="lazy" className={styles.mysql} src="/mysql.png" alt="" />
         </div>
       </section>
 

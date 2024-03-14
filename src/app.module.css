@@ -266,9 +266,13 @@ h1 span{
     width: 100px;
     padding: 10px;
 }
-.skills:hover {
-    transform: scale(1.1, 1.1);
-    box-shadow: 30px 15px 40px 0 #52446b;
+.mysql{
+  width: 130px;
+  padding: 10px;
+}
+.skills:hover, .mysql:hover {
+  transform: scale(1.1, 1.1);
+  filter: drop-shadow(0 0 0.75rem #b291ea);
 }
 .imgs{
     margin: auto;
